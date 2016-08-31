@@ -1,0 +1,11 @@
+Sispu - Sistema de Gerenciamento de Puteiro
+
+- Cadastro das "profissinau do séquisso"
+	- O que ele faz
+- Cadastro dos clientes
+- Sistema de gerenciamento dos quartos
+- Sistema do bar e cia
+- Sistema de busca de putas (ou putos, ou os dois)
+
+
+* Código tá no Github
