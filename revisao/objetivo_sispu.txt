@@ -4,6 +4,7 @@ Sispu - Sistema de Gerenciamento de Puteiro
 	* Dados
 	- Nome
 	- Sexo (biológico)
+	- Com Quem faz Sexo
 	- tamanho do busto (tamanho das teta)
 	- Tamanho da benga (homem) 
 	- Tipos de trabalho 
