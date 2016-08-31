@@ -4,7 +4,7 @@ CREATE DATABASE SisPu;
 
 CREATE TABLE tb_Profissional (
 	
-	idProfissional INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	cdProfissional INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	nmProfissional VARCHAR(75),
 	nmSexo VARCHAR(2),
 	qtBusto FLOAT,
@@ -28,7 +28,7 @@ INSERT INTO tb_TipoSexo (nmTipoSexo, dtInclusao) VALUES ("Homosexual", NOW());
 
 CREATE TABLE tb_ProfissionalTipoTrabalho (
 	cdProfissionalTipoTrabalho INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	idProfissional INT NOT NULL,
+	cdProfissional INT NOT NULL,
 	cdTipoTrabalho INT NOT NULL,
 	bAtivo BOOLEAN NOT NULL DEFAULT TRUE,
 	dtInclusao DATE,
@@ -42,3 +42,17 @@ CREATE TABLE tb_TipoTrabalho (
 	dtInclusao DATE,
 	dtAlteracao DATE
 );
+
+
+ALTER TABLE tb_ProfissionalTipoTrabalho
+ADD CONSTRAINT FK_ProfissionalTipoTrabalho_Profissional
+FOREIGN KEY (cdProfissional) 
+REFERENCES tb_Profissional (cdProfissional);
+
+ALTER TABLE tb_ProfissionalTipoTrabalho
+ADD CONSTRAINT FK_ProfissionalTipoTrabalho_TipoTrabalho
+FOREIGN KEY (cdTipoTrabalho)
+REFERENCES tb_TipoTrabalho (cdTipoTrabalho);
+
+
+
