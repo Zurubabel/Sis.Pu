@@ -6,12 +6,12 @@ CREATE TABLE tb_Profissional (
 	
 	cdProfissional INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	nmProfissional VARCHAR(75),
-	nmSexo VARCHAR(2),
+	nmSexo VARCHAR(1),
+	cdTipoSexo INT,
 	qtBusto FLOAT,
 	qtBenga FLOAT,
 	dtInclusao DATE,
 	dtAlteracao DATE
-	/* Tipos de Trabalho ?*/
 );
 
 CREATE TABLE tb_TipoSexo (
@@ -54,5 +54,8 @@ ADD CONSTRAINT FK_ProfissionalTipoTrabalho_TipoTrabalho
 FOREIGN KEY (cdTipoTrabalho)
 REFERENCES tb_TipoTrabalho (cdTipoTrabalho);
 
-
+ALTER TABLE tb_Profissional
+ADD CONSTRAINT FK_Profissional_TipoSexo
+FOREIGN KEY (cdTipoSexo)
+REFERENCES tb_TipoSexo (cdTipoSexo);
 
