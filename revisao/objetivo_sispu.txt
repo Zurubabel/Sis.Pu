@@ -10,6 +10,8 @@ Sispu - Sistema de Gerenciamento de Puteiro
 	- Tipos de trabalho 
 	- Preço (Relacionado ao tipo de trabalho)
 	
+	// Ativo - Passivo - Totalflex (Homem)
+	
 	
 - Cadastro dos clientes
 - Sistema de gerenciamento dos quartos
