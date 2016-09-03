@@ -1,13 +1,10 @@
 <?php
 
 	include_once 'php/DAO/Conexao.php';
-
-	$con = Conexao::retornarConexao();
 	
 	try {
+		$con = Conexao::retornarNovaConexao();
 		print_r($con);
-	} catch (Exception $e) {
+	} catch(Exception $e) {
 		echo $e->getMessage();
 	}
-	
-	
