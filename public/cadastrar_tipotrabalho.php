@@ -1,3 +1,12 @@
+<?php 
+
+	if (isset($_POST["nmTipoTrabalho"])) {
+		echo $_POST["nmTipoTrabalho"];
+	}
+	
+	
+?>
+
 <!doctype html>
 <html>
 	<head>
@@ -6,7 +15,7 @@
 	</head>
 	<body>
 		<div id="divCadastro">
-			<form>
+			<form action="" method="post" >
 				<ul>
 					<li><h3>Cadastro de Tipo de Trabalho</h3></li>
 				</ul>
