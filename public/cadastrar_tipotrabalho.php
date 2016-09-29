@@ -1,7 +1,14 @@
 <?php 
 
+	include_once "../private/php/model/TipoTrabalho.php";
+
 	if (isset($_POST["nmTipoTrabalho"])) {
-		echo $_POST["nmTipoTrabalho"];
+		
+		$tipoTrabalho = new TipoTrabalho();
+		$tipoTrabalho->setNmTipoTrabalho($_POST["nmTipoTrabalho"]);
+		$tipoTrabalho->setBAtivo(isset($_POST["bAtivo"]));
+		
+		$tipoTrabalho->inserir();
 	}
 	
 	
@@ -28,7 +35,7 @@
 					<li><input type="text" maxlength="50" name="nmTipoTrabalho" /></li>
 				</ul>
 				<ul>
-					<li>Ativo: <input type="checkbox" name="bAtivo" /></li>
+					<li>Ativo: <input type="checkbox" name="bAtivo" checked /></li>
 				</ul>
 				<ul>
 					<li><button type="submit">Enviar</button>
