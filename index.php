@@ -1,6 +1,6 @@
 <?php
 
-	include_once 'php/DAO/Conexao.php';
+	include_once 'private/php/DAO/Conexao.php';
 	
 	try {
 		$con = Conexao::retornarNovaConexao();
