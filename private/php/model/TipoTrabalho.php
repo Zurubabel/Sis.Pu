@@ -24,6 +24,12 @@
 				
 				$stmt->execute();
 				
+				$afetados = $stmt->rowCount();
+				
+				if ($afetados <= 0) {
+					throw new Exception("Não inseriu");
+				}
+				
 			} catch (Exception $e) {
 				echo $e->getMessage();
 			}
