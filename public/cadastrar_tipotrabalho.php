@@ -1,6 +1,9 @@
 <?php 
 
 	include_once "../private/php/model/TipoTrabalho.php";
+	include_once "../private/php/model/Logs.php";
+	
+	Logs::criarLog("Novo log\n");
 
 	if (isset($_POST["nmTipoTrabalho"])) {
 		
