@@ -12,7 +12,7 @@ CREATE TABLE tb_Profissional (
 	qtBenga FLOAT,
 	dtInclusao DATE,
 	dtAlteracao DATE
-);
+) ENGINE = InnoDB;
 
 CREATE TABLE tb_TipoSexo (
 	cdTipoSexo INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -20,7 +20,7 @@ CREATE TABLE tb_TipoSexo (
 	bAtivo BOOLEAN NOT NULL DEFAULT TRUE,
 	dtInclusao DATE,
 	dtAlteracao DATE
-);
+) ENGINE = InnoDB;
 
 INSERT INTO tb_TipoSexo (nmTipoSexo, dtInclusao) VALUES ("Heterossexual", NOW()); 
 INSERT INTO tb_TipoSexo (nmTipoSexo, dtInclusao) VALUES ("Bissexual", NOW());
@@ -33,7 +33,7 @@ CREATE TABLE tb_ProfissionalTipoTrabalho (
 	bAtivo BOOLEAN NOT NULL DEFAULT TRUE,
 	dtInclusao DATE,
 	dtAlteracao DATE
-);
+) ENGINE = InnoDB;
 
 CREATE TABLE tb_TipoTrabalho (
 	cdTipoTrabalho INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -41,7 +41,7 @@ CREATE TABLE tb_TipoTrabalho (
 	bAtivo BOOLEAN NOT NULL DEFAULT TRUE,
 	dtInclusao DATE,
 	dtAlteracao DATE
-);
+) ENGINE = InnoDB;
 
 
 ALTER TABLE tb_ProfissionalTipoTrabalho

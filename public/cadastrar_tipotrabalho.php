@@ -8,7 +8,14 @@
 		$tipoTrabalho->setNmTipoTrabalho($_POST["nmTipoTrabalho"]);
 		$tipoTrabalho->setBAtivo(isset($_POST["bAtivo"]));
 		
-		$tipoTrabalho->inserir();
+		try {
+			$tipoTrabalho->inserir();
+			echo "<h3>Cadastro realizado com sucesso.</h3> <br />";
+		} catch (Exception $e) {
+			echo "Erro ao inserir <br />";
+			echo "<strong>Erro - " . $e->getMessage() . "</strong><br />";
+		}
+
 	}
 	
 	

@@ -15,6 +15,8 @@
 				
 				$con = Conexao::retornarNovaConexao();
 				
+				$con->beginTransaction();				
+				
 				$sql = "INSERT INTO tb_TipoTrabalho(nmTipoTrabalho, bAtivo, dtInclusao) "
 						. "VALUES (:nmTipoTrabalho, :bAtivo, NOW());";
 				$stmt = $con->prepare($sql);
@@ -23,16 +25,17 @@
 				$stmt->bindParam(":bAtivo", $this->bAtivo);
 				
 				$stmt->execute();
-				
 				$afetados = $stmt->rowCount();
-				
 				if ($afetados <= 0) {
 					throw new Exception("Não inseriu");
 				}
-				
+				$con->commit();				
+
 			} catch (Exception $e) {
-				echo $e->getMessage();
+				$con->rollBack();
+				throw $e;
 			}
+
 		}
 		
 		
